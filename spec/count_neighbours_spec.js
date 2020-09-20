@@ -2,27 +2,60 @@ const { countNeighbours } = require("../src/count_neighbours")
 
 describe("countNeighbours", function() {
     describe("returns total live neighbours", function() {
-        describe("for single array", function() {
-            it("1 element", function() {
-                const cell = [0];
-                expect(countNeighbours(cell, 0)).toEqual(0);
+        describe("for center element within 3x3 grid", function() {
+            it("no live neighbours", function() {
+                const grid = [[0, 0, 0],
+                              [0, 0, 0],
+                              [0, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(0);
             })
-            it("of length 2 with 1 live element", function() {
-                const pair = [1, 0];
-                expect(countNeighbours(pair, 0)).toEqual(0);
-                expect(countNeighbours(pair, 1)).toEqual(1);
+            it("live west neighbour", function() {
+                const grid = [[0, 0, 0],
+                              [1, 0, 0],
+                              [0, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
             })
-            it("of length 3 with 1 live element", function() {
-                const arr = [1, 0, 0];
-                expect(countNeighbours(arr, 0)).toEqual(0);
-                expect(countNeighbours(arr, 1)).toEqual(1);
-                expect(countNeighbours(arr, 2)).toEqual(0);
+            it("live north neighbour", function() {
+                const grid = [[0, 1, 0],
+                              [0, 0, 0],
+                              [0, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
             })
-            it("of length 3 with 2 live element", function() {
-                const arr = [0, 1, 1];
-                expect(countNeighbours(arr, 0)).toEqual(1);
-                expect(countNeighbours(arr, 1)).toEqual(1);
-                expect(countNeighbours(arr, 2)).toEqual(1);
+            it("live east neighbour", function() {
+                const grid = [[0, 0, 0],
+                              [0, 0, 1],
+                              [0, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
+            })
+            it("live south neighbour", function() {
+                const grid = [[0, 0, 0],
+                              [0, 0, 0],
+                              [0, 1, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
+            })
+            it("live south west neighbour", function() {
+                const grid = [[0, 0, 0],
+                              [0, 0, 0],
+                              [1, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
+            })
+            it("live north west neighbour", function() {
+                const grid = [[1, 0, 0],
+                              [0, 0, 0],
+                              [0, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
+            })
+            it("live north east neighbour", function() {
+                const grid = [[0, 0, 1],
+                              [0, 0, 0],
+                              [0, 0, 0]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
+            })
+            it("live south east neighbour", function() {
+                const grid = [[0, 0, 0],
+                              [0, 0, 0],
+                              [0, 0, 1]];
+                expect(countNeighbours(grid, 1, 1)).toEqual(1);
             })
         })
     })
