@@ -1,9 +1,5 @@
-function countNeighbours(array) {
-    let result = 0;
-    if (array.length === 1) {
-        return result;
-    }
-    return 1;
+function countNeighbours(grid) {
+    return 0;
 }
 
 module.exports = { countNeighbours }
