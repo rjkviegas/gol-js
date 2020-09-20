@@ -1,15 +1,13 @@
-function countNeighbours(array, cell) {
+function countNeighbours(array, x) {
     let result = 0;
-    if (array.length === 1) {
-        return result;
+    if (array.length === 1) { return result }
+    if (array[x - 1] !== undefined) {
+        result += array[x - 1];
     }
-    array.forEach(function(e) {
-        if (e === 1) {
-            result += 1;
-        }
-    })
-    return result - cell;
-
+    if (array[x + 1] !== undefined){
+        result += array[x + 1];
+    }
+    return result;
 }
 
 module.exports = { countNeighbours }
