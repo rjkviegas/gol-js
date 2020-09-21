@@ -32,5 +32,15 @@ describe("generation", function() {
                  [0, 0, 0]]
             );
         })
+        it("kills live cell with 1 neighbour", function() {
+            const grid = [[1, 1, 0],
+                          [0, 0, 0],
+                          [0, 0, 0]];
+            expect(generation(grid)).toEqual(
+                [[0, 0, 0],
+                 [0, 0, 0],
+                 [0, 0, 0]]
+            );
+        })
     })
 })
