@@ -14,7 +14,7 @@ function countNeighbours(grid, x, y) {
     ];
     OFFSETS_ARRAY.forEach(function (spec) {
         let {i, j} = spec;
-        if (x + j < maxCols && x + j >= 0 && y + i >= 0 && y + 1 < maxRows) {
+        if ((x + j < maxCols) && (x + j >= 0) && (y + i >= 0) && (y + i < maxRows)) {
             result += grid[y + i][x + j];
         }
     })

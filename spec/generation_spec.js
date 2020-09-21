@@ -12,5 +12,25 @@ describe("generation", function() {
                  [0, 0, 0]]
             );
         })
+        it("makes dead cell alive due to 3 neighbours", function() {
+            const grid = [[1, 0, 0],
+                          [0, 1, 0],
+                          [1, 0, 0]];
+            expect(generation(grid)).toEqual(
+                [[0, 0, 0],
+                 [1, 0, 0],
+                 [0, 0, 0]]
+            );
+        })
+        it("kills live cell with 4 neighbours", function() {
+            const grid = [[1, 1, 0],
+                          [1, 0, 0],
+                          [1, 1, 0]];
+            expect(generation(grid)).toEqual(
+                [[0, 0, 0],
+                 [0, 0, 0],
+                 [0, 0, 0]]
+            );
+        })
     })
 })
