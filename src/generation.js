@@ -26,11 +26,8 @@ function generation(grid) {
         for(j = 0; j < maxCols; j += 1) {
             let cell = grid[i][j];
             let neighbours = countNeighbours(grid, j, i);
-            if (isDead(cell) && makeAlive(neighbours)) {
-                result[i][j] = 1;
-            } else if (isAlive(cell) && makeDead(neighbours)) {
-                result[i][j] = 0;
-            }
+            if (isDead(cell) && makeAlive(neighbours)) result[i][j] = 1;
+            if (isAlive(cell) && makeDead(neighbours)) result[i][j] = 0;
         }
     }
     return result;
