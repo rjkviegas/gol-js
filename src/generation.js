@@ -2,7 +2,7 @@ const { countNeighbours } = require("./count_neighbours");
 const { setUp } = require("./grid");
 
 function generation(grid) {
-    const next = setUp(3, 3);
+    const result = setUp(3, 3);
     const maxRows = grid.length;
     const maxCols = grid[0].length;
 
@@ -27,13 +27,13 @@ function generation(grid) {
             let cell = grid[i][j];
             let neighbours = countNeighbours(grid, j, i);
             if (isDead(cell) && makeAlive(neighbours)) {
-                next[i][j] = 1;
+                result[i][j] = 1;
             } else if (isAlive(cell) && makeDead(neighbours)) {
-                next[i][j] = 0;
+                result[i][j] = 0;
             }
         }
     }
-    return next;
+    return result;
 }
 
 module.exports = { generation };
