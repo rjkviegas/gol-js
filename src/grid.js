@@ -5,4 +5,4 @@ function setUp(rows, cols) {
     })
 }
 
-module.exports = { setUp }
+module.exports = { setUp };

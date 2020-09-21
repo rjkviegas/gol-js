@@ -21,4 +21,4 @@ function countNeighbours(grid, x, y) {
     return result;
 }
 
-module.exports = { countNeighbours }
+module.exports = { countNeighbours };
