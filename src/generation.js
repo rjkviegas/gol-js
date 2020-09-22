@@ -23,12 +23,12 @@ function generation(grid) {
         return (neighbours > 3 || neighbours < 2);
     }
 
-    for(i = 0; i < maxY; i += 1) {
-        for(j = 0; j < maxX; j += 1) {
+    for(let i = 0; i < maxY; i += 1) {
+        for(let j = 0; j < maxX; j += 1) {
             let cell = grid[i][j];
             let neighbours = countNeighbours(grid, j, i);
-            if (isDead(cell) && makeAlive(neighbours)) result[i][j] = 1;
-            if (isAlive(cell) && makeDead(neighbours)) result[i][j] = 0;
+            if (isDead(cell) && makeAlive(neighbours)) {result[i][j] = 1;}
+            if (isAlive(cell) && makeDead(neighbours)) {result[i][j] = 0;}
         }
     }
     return result;

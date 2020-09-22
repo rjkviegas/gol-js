@@ -17,8 +17,8 @@ function countNeighbours(grid, x, y) {
         if ((x + i < maxX)
             && (x + i >= 0)
             && (y + j >= 0)
-            && (y + j < maxY)) result += grid[y + j][x + i];
-    })
+            && (y + j < maxY)) {result += grid[y + j][x + i];}
+    });
     return result;
 }
 
