@@ -54,5 +54,15 @@ describe("generation", function() {
                  [0, 0, 0]]
             );
         });
+        it("keeps live cells alive when there are 2 neighbours", function() {
+            const grid = [[0, 1, 0],
+                          [0, 1, 0],
+                          [0, 1, 0]];
+            expect(generation(grid)).toEqual(
+                [[0, 0, 0],
+                 [1, 1, 1],
+                 [0, 0, 0]]
+            );
+        });
     });
 });
