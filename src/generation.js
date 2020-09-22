@@ -1,13 +1,14 @@
 const { countNeighbours } = require("./count_neighbours");
-const { setUp } = require("./grid");
 
 function generation(grid) {
-    const result = setUp(3, 3);
-    const maxRows = grid.length;
-    const maxCols = grid[0].length;
+    let result = grid.map(function(arr) {
+        return arr.slice();
+    });
+    const maxY = grid.length;
+    const maxX = grid[0].length;
 
     function isAlive(cell) {
-        return cell === 0;
+        return cell === 1;
     }
 
     function isDead(cell) {
@@ -22,8 +23,8 @@ function generation(grid) {
         return (neighbours > 3 || neighbours < 2);
     }
 
-    for(i = 0; i < maxRows; i += 1) {
-        for(j = 0; j < maxCols; j += 1) {
+    for(i = 0; i < maxY; i += 1) {
+        for(j = 0; j < maxX; j += 1) {
             let cell = grid[i][j];
             let neighbours = countNeighbours(grid, j, i);
             if (isDead(cell) && makeAlive(neighbours)) result[i][j] = 1;

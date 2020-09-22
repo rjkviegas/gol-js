@@ -57,6 +57,12 @@ describe("countNeighbours", function() {
                               [0, 0, 1]];
                 expect(countNeighbours(grid, 1, 1)).toEqual(1);
             })
+            it("return 3 neighbours", function () {
+                const grid = [[1, 0, 0],
+                              [0, 1, 0],
+                              [1, 0, 0]];
+                expect(countNeighbours(grid, 0, 1)).toEqual(3);
+            })
         })
     })
 })
