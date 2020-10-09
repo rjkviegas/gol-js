@@ -1,4 +1,4 @@
-const { countNeighbours } = require("./count_neighbours");
+const { countNeighbours } =require("./count_neighbours");
 
 function generation(grid) {
     let result = grid.map(function(arr) {
@@ -34,4 +34,4 @@ function generation(grid) {
     return result;
 }
 
-module.exports = { generation };
+module.exports = {generation};

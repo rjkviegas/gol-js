@@ -6,4 +6,4 @@ function setUpGrid(rows, cols) {
     return result;
 }
 
-module.exports = { setUpGrid };
+module.exports = {setUpGrid};
